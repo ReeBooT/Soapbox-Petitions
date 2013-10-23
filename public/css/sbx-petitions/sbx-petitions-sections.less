@@ -1,0 +1,234 @@
+//
+// Sections
+// --------------------------------------------------
+
+// Section: Petition Page Header
+.petition-title {
+	margin: 0px;
+}
+
+
+
+// Section: Petition Media
+.section-petition-media {
+	// margin: 32px 0;
+}
+
+
+
+// Section: Petition Progress
+.section-petition-progress {
+	// margin: 32px 0px;
+}
+
+
+
+// Section: Petition Progress
+.petition-progress {
+	
+	display: table;
+	width: 100%;
+
+	.petition-chart,
+	.petition-count,
+	.petition-goal {
+		display: table-cell;
+		vertical-align: middle;
+	}
+
+	.petition-chart {
+		width: 20%;
+	}
+
+	.petition-count,
+	.petition-goal {
+		text-align: right;
+		width: 40%;
+	}
+
+}
+
+.petition-prognum {
+	margin: 0px;
+
+	font-size: 56px;
+	line-height: 1.1em;
+	color: #333;
+}
+
+.petition-proglabel {
+	margin: 0px;
+
+	font-size: 24px;
+	line-height: 1.1em;
+	font-weight: 700;
+	color: #999;
+}
+
+.petition-progchart {
+	position: relative;
+	display: inline-block;
+	width: 140px;
+	height: 140px;
+	// margin-top: 50px;
+	// margin-bottom: 50px;
+	text-align: center;
+	canvas {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	.percent {
+		display: inline-block;
+		line-height: 140px;
+		z-index: 2;
+		font-size: 34px;
+		font-weight: 700;
+		color: #222;
+
+		&:after{
+			content: '%';
+			margin-left: 0.1em;
+			font-size: 1em;
+		}
+	}
+
+}
+
+
+
+// Section: Petition Letter
+.section-petition-letter {
+	padding: 30px 50px 30px 30px;
+	box-shadow: 0px 0px 10px #ccc;
+	border-left: 30px solid #ccc;
+	background: #f2f2f2;
+}
+
+.petition-letter {
+	font-family: Courier;	
+}
+
+
+
+// Section: Petition Supporters
+.petition-supporterslist {
+	margin: 0px;
+}
+
+.supporter-item {
+	margin-top: 24px;
+	padding-top: 24px;
+
+	border-top: 1px solid #eee;
+
+	list-style: none;
+	font-size: 14px;
+	line-height: 24px;
+
+	&:first-child {
+		border-top: none;
+		padding-top: 0px;
+	}
+
+}
+
+.supporter-headline {
+	position: relative;
+}
+
+.supporter-name {
+	color: #555;
+	font-weight: 700;
+}
+
+.supporter-location {
+	padding-left: 6px;
+
+	font-size: 12px;
+	color: #999;
+	text-transform: uppercase;
+}
+
+.supporter-time {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+
+	color: #999;
+}
+
+
+
+// Section: Petition Form
+.petition-formintro {
+	margin-bottom: 24px;
+}
+
+.petition-formoutro {
+	margin-top: 24px;
+
+	font-size: 14px;
+	line-height: 24px;
+	color: #666;
+}
+
+.form-l-verticalfull {
+
+	.row-fluid [class*=span] {
+		float: none;
+		width: 100%;
+		margin-left: 0px;		
+	}
+
+	.control-group {
+		margin-bottom: 0px;
+	}
+
+	.controls {
+		margin-bottom: 8px;
+	}
+
+	.cg-checkboxes .controls {
+		margin-bottom: 16px;
+	}
+
+}
+
+
+
+
+
+@media (max-width: 480px) {
+
+	.petition-progchart {
+		width: 70px;
+		height: 70px;
+
+		canvas {
+			width: 70px;
+			height: 70px;
+		}
+
+		.percent {
+			line-height: 70px;
+			font-size: 14px;
+		}
+	}
+
+	.petition-prognum {
+		font-size: 28px;
+		line-height: 1.2em;
+	}
+
+	.petition-proglabel {
+		font-size: 14px;
+		line-height: 1.2em;
+	}
+
+	.petition-progress .petition-count, 
+	.petition-progress .petition-goal {
+		width: 40%;
+	}
+}

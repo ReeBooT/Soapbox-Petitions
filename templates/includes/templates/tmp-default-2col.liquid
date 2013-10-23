@@ -1,0 +1,24 @@
+{% assign formlayout = 'form-l-verticalfull' %}
+
+<div id="page" class="sbx petitions petitions-view-petition lay-2col">
+	{% include "organisms/org-pageheader" %}
+
+	<div class="row-fluid">
+		<div class="span8 petitions-col-main">				
+			{% include "organisms/org-media" %}
+			{% include "organisms/org-progress" %}
+			{% include "organisms/org-pageintro" %}			
+			{% include "organisms/org-letter" %}
+			{% include "organisms/org-supporters" %}
+			{% include "organisms/org-socialshare" %}
+			{% include "organisms/org-pageoutro" %}
+		</div>
+		<div class="span4 petitions-col-sidebar">
+			<div class="petitions-sidebar">
+				{% comment %}<div class="affix">{% endcomment %}
+				{% include "organisms/org-form" with {{formlayout}} %}
+				{% comment %}</div>{% endcomment %}
+			</div>
+		</div>
+	</div>
+</div>
