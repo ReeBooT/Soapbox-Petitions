@@ -40,6 +40,8 @@
 	{{ "/easypiechart/dist/jquery.easypiechart.min.js" | asset_url | script_tag }}
  
 	<script type="text/javascript">
+		// $('#petitionSidebar').affix()
+
 		$(function() {
 		    $('.petition-progchart').easyPieChart({
 		    	onStep: function(from, to, percent) {

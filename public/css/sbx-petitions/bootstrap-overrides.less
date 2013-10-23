@@ -2,6 +2,26 @@
 // Bootstrap Overrides
 // --------------------------------------------------
 
+// Clearfix
+// --------
+// For clearing floats like a boss h5bp.com/q
+.clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    // Fixes Opera/contenteditable bug:
+    // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+
+
 .help-block {
 	margin-top: 6px;
 	margin-bottom: 0px;
@@ -15,13 +35,13 @@
 }
 
 .control-group {
-	margin-bottom: 20px;
+	margin-bottom: 16px;
 
 	&.complex {
-		margin-bottom: 5px;
+		margin-bottom: 6px;
 
 		.controls {
-			margin-bottom: 15px;
+			margin-bottom: 16px;
 		}
 	}
 
@@ -29,6 +49,38 @@
 		font-weight: bold;
 	}
 }
+
+
+
+
+
+.form-l-vert-w100 {
+
+	.row-fluid [class*=span] {
+		float: none;
+		width: 100%;
+		margin-left: 0px;		
+	}
+
+	.control-group {
+		margin-bottom: 0px;
+	}
+
+	.controls {
+		margin-bottom: 16px;
+	}
+
+}
+
+.form-cg-mrg-small .controls {
+	margin-bottom: 8px;
+}
+
+.form-cg-mrg-small .cg-checkboxes {
+	margin-bottom: 16px;
+}
+
+
 
 .nowrap {
 	white-space: nowrap;
@@ -86,15 +138,15 @@ td.full {
 }
 
 input.input-text {
-	height: 39px;
-	line-height: 39px;
+	height: 40px;
+	line-height: 40px;
 	padding: 8px 8px 8px 12px;
 	box-sizing: border-box;
 }
 
 select.select {
-	height: 39px;
-	line-height: 39px;
+	height: 40px;
+	line-height: 40px;
 	padding: 8px 8px 8px 12px;
 	box-sizing: border-box;
 }
@@ -108,20 +160,21 @@ select.select {
 	min-height: inherit !important;
 }
 
-// Clearfix
-// --------
-// For clearing floats like a boss h5bp.com/q
-.clearfix {
-  *zoom: 1;
-  &:before,
-  &:after {
-    display: table;
-    content: "";
-    // Fixes Opera/contenteditable bug:
-    // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
-    line-height: 0;
-  }
-  &:after {
-    clear: both;
-  }
+
+
+
+
+
+
+@media (max-width: 767px) {
+
+
+	.control-group {
+		margin-bottom: 0px;
+
+		.controls {
+			margin-bottom: 16px;
+		}
+	}
+
 }

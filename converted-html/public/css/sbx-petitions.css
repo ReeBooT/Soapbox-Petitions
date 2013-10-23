@@ -3,6 +3,18 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
 .help-block {
   margin-top: 6px;
   margin-bottom: 0px;
@@ -14,16 +26,33 @@
   width: auto;
 }
 .control-group {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 .control-group.complex {
-  margin-bottom: 5px;
+  margin-bottom: 6px;
 }
 .control-group.complex .controls {
-  margin-bottom: 15px;
+  margin-bottom: 16px;
 }
 .control-group .control-label {
   font-weight: bold;
+}
+.form-l-vert-w100 .row-fluid [class*=span] {
+  float: none;
+  width: 100%;
+  margin-left: 0px;
+}
+.form-l-vert-w100 .control-group {
+  margin-bottom: 0px;
+}
+.form-l-vert-w100 .controls {
+  margin-bottom: 16px;
+}
+.form-cg-mrg-small .controls {
+  margin-bottom: 8px;
+}
+.form-cg-mrg-small .cg-checkboxes {
+  margin-bottom: 16px;
 }
 .nowrap {
   white-space: nowrap;
@@ -65,14 +94,14 @@ td.full {
   border: none;
 }
 input.input-text {
-  height: 39px;
-  line-height: 39px;
+  height: 40px;
+  line-height: 40px;
   padding: 8px 8px 8px 12px;
   box-sizing: border-box;
 }
 select.select {
-  height: 39px;
-  line-height: 39px;
+  height: 40px;
+  line-height: 40px;
   padding: 8px 8px 8px 12px;
   box-sizing: border-box;
 }
@@ -83,17 +112,13 @@ select.select {
 .input-block-level {
   min-height: inherit !important;
 }
-.clearfix {
-  *zoom: 1;
-}
-.clearfix:before,
-.clearfix:after {
-  display: table;
-  content: "";
-  line-height: 0;
-}
-.clearfix:after {
-  clear: both;
+@media (max-width: 767px) {
+  .control-group {
+    margin-bottom: 0px;
+  }
+  .control-group .controls {
+    margin-bottom: 16px;
+  }
 }
 .petition-title {
   margin: 0px;
@@ -154,12 +179,6 @@ select.select {
   margin-left: 0.1em;
   font-size: 1em;
 }
-.section-petition-letter {
-  padding: 30px 50px 30px 30px;
-  box-shadow: 0px 0px 10px #ccc;
-  border-left: 30px solid #ccc;
-  background: #f2f2f2;
-}
 .petition-letter {
   font-family: Courier;
 }
@@ -206,19 +225,23 @@ select.select {
   line-height: 24px;
   color: #666;
 }
-.form-l-verticalfull .row-fluid [class*=span] {
-  float: none;
-  width: 100%;
-  margin-left: 0px;
-}
-.form-l-verticalfull .control-group {
-  margin-bottom: 0px;
-}
-.form-l-verticalfull .controls {
-  margin-bottom: 8px;
-}
-.form-l-verticalfull .cg-checkboxes .controls {
-  margin-bottom: 16px;
+@media (max-width: 979px) {
+  .petition-progchart {
+    width: 100px;
+    height: 100px;
+  }
+  .petition-progchart canvas {
+    width: 100px;
+    height: 100px;
+  }
+  .petition-progchart .percent {
+    line-height: 100px;
+    font-size: 20px;
+  }
+  .petition-prognum {
+    font-size: 36px;
+    line-height: 1.2em;
+  }
 }
 @media (max-width: 480px) {
   .petition-progchart {
@@ -241,8 +264,10 @@ select.select {
     font-size: 14px;
     line-height: 1.2em;
   }
-  .petition-progress .petition-count,
-  .petition-progress .petition-goal {
-    width: 40%;
-  }
+}
+.section-petition-letter {
+  padding: 30px 50px 30px 30px;
+  box-shadow: 0px 0px 10px #ccc;
+  border-left: 30px solid #ccc;
+  background: #f2f2f2;
 }
