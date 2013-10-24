@@ -16,7 +16,11 @@
 	<link href="public/css/mixture.min.css" rel="stylesheet" type="text/css" media="all"/>
 	<link href="public/css/sbx-core.min.css" rel="stylesheet" type="text/css" media="all"/>
 	<link href="public/css/sbx-petitions.min.css" rel="stylesheet" type="text/css" media="all"/>
+
+	<link href="public/js/zozo.accordion.4.0/css/zozo.accordion.min.css" rel="stylesheet" type="text/css" media="all"/>
+
 	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+
 	<script src="public/js/modernizr-latest.min.js"></script>
 	<script src="public/js/selectivizr.min.js"></script>
 </head>
@@ -55,6 +59,7 @@
 							<li role="presentation"><a role="menuitem" tabindex="-1" href="pages/page-default(1col).html">Default (1col)</a></li>
 							<li role="presentation"><a role="menuitem" tabindex="-1" href="pages/page-default(1col-form).html">Default (1col Form)</a></li>
 							<li role="presentation"><a role="menuitem" tabindex="-1" href="pages/page-default(1col-stickybtn).html">Default (1col) w/ Sticky Button</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" href="pages/page-default(1col-accordion).html">Default (1col) w/ Accordion</a></li>
 							<li role="presentation"><a role="menuitem" tabindex="-1" href="pages/page-default(2col).html">Default (2col)</a></li>
 							<li role="presentation"><a role="menuitem" tabindex="-1" href="pages/page-default(2col-stickybtn).html">Default (2col) w/ Sticky Button</a></li>
 							<li role="presentation"><a role="menuitem" tabindex="-1" href="pages/page-thankyou.html">Thank You</a></li>
@@ -91,8 +96,10 @@
 	</div>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	
 	<script src="public/js/bootstrap.min.js"></script>
 	<script src="public/js/easypiechart/dist/jquery.easypiechart.min.js"></script>
+	<script src="public/js/zozo.accordion.4.0/js/zozo.accordion.min.js"></script>
  
 	<script type="text/javascript">
 		// $('#petitionSidebar').affix()
@@ -110,6 +117,20 @@
 
 		    });
 		});
+
+
+		$(document).ready(function () {
+            var demo = $("#demo-accordion").zozoAccordion({
+                theme: "white",
+                active: false,
+                sectionSpacing: 0,
+                shadows: false,
+                responsive: true,
+                expandMode: "multiple",
+                rounded: true
+            });
+        });
+
 	</script>
 
 

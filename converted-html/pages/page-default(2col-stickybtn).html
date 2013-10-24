@@ -16,7 +16,11 @@
 	<link href="../public/css/mixture.min.css" rel="stylesheet" type="text/css" media="all"/>
 	<link href="../public/css/sbx-core.min.css" rel="stylesheet" type="text/css" media="all"/>
 	<link href="../public/css/sbx-petitions.min.css" rel="stylesheet" type="text/css" media="all"/>
+
+	<link href="../public/js/zozo.accordion.4.0/css/zozo.accordion.min.css" rel="stylesheet" type="text/css" media="all"/>
+
 	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+
 	<script src="../public/js/modernizr-latest.min.js"></script>
 	<script src="../public/js/selectivizr.min.js"></script>
 </head>
@@ -55,6 +59,7 @@
 							<li role="presentation"><a role="menuitem" tabindex="-1" href="page-default(1col).html">Default (1col)</a></li>
 							<li role="presentation"><a role="menuitem" tabindex="-1" href="page-default(1col-form).html">Default (1col Form)</a></li>
 							<li role="presentation"><a role="menuitem" tabindex="-1" href="page-default(1col-stickybtn).html">Default (1col) w/ Sticky Button</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" href="page-default(1col-accordion).html">Default (1col) w/ Accordion</a></li>
 							<li role="presentation"><a role="menuitem" tabindex="-1" href="page-default(2col).html">Default (2col)</a></li>
 							<li role="presentation"><a role="menuitem" tabindex="-1" href="page-default(2col-stickybtn).html">Default (2col) w/ Sticky Button</a></li>
 							<li role="presentation"><a role="menuitem" tabindex="-1" href="page-thankyou.html">Thank You</a></li>
@@ -131,14 +136,14 @@
 			
 			
 			
-<div class="section section-petition-formtoggle" id="section-petitionFormToggle">
+<div class="section section-petition-formtoggle " id="section-petitionFormToggle">
 	<div class="petition-formtoggle">
 	<button class="btn btn-primary btn-petition-formtoggle " type="button">SIGN THE PETITION</button>
 </div>
 </div>
 
 
-			<div class="section section-petition-letter" id="section-petitionLetter">
+			<div class="section section-petition-letter " id="section-petitionLetter">
 	<h3 class="section-title petition-letter-title">Letter</h3>
 	<div class="petition-letter">
 	<p>Nullam quis risus eget urna mollis ornare vel eu leo. Curabitur blandit tempus porttitor. Donec id elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
@@ -146,7 +151,7 @@
 	<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
 </div>
 </div>
-			<div class="section section-petition-supporters" id="section-petitionSupporters">
+			<div class="section section-petition-supporters " id="section-petitionSupporters">
 	<h3 class="section-title petition-supporterstitle">Supporters</h3>
 	<ul class="petition-supporters-list">
 	<li class="supporter-item">
@@ -325,8 +330,10 @@
 	</div>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	
 	<script src="../public/js/bootstrap.min.js"></script>
 	<script src="../public/js/easypiechart/dist/jquery.easypiechart.min.js"></script>
+	<script src="../public/js/zozo.accordion.4.0/js/zozo.accordion.min.js"></script>
  
 	<script type="text/javascript">
 		// $('#petitionSidebar').affix()
@@ -344,6 +351,20 @@
 
 		    });
 		});
+
+
+		$(document).ready(function () {
+            var demo = $("#demo-accordion").zozoAccordion({
+                theme: "white",
+                active: false,
+                sectionSpacing: 0,
+                shadows: false,
+                responsive: true,
+                expandMode: "multiple",
+                rounded: true
+            });
+        });
+
 	</script>
 
 
