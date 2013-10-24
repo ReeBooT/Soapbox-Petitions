@@ -1,6 +1,6 @@
 .section {
   color: #555;
-  margin: 48px 0 48px 0;
+  margin: 46px 0 48px 0;
 }
 .section h4.subtitle {
   font-size: 18px;
@@ -21,6 +21,7 @@
   line-height: 39px;
 }
 .section-title {
+  margin: 24px 0px;
   text-transform: uppercase;
   color: #333;
   font-size: 28px;
@@ -115,12 +116,15 @@ h1.title {
   font-size: 32px;
   line-height: 32px;
 }
-.socialshare h5 {
+.socialshare .share-title {
   float: left;
   line-height: 32px;
 }
 .socialshare .share-list {
   float: right;
+}
+.socialshare .share-list li:last-child {
+  margin-right: 0px;
 }
 .socialshare {
   *zoom: 1;

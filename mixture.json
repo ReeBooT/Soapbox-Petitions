@@ -16,5 +16,14 @@
   "templateDefaultPage": "pages/page-default(1col)",
   "templateDirectory": "templates",
   "type": "mixture",
-  "useCompass": false
+  "useCompass": false,
+
+  "ftpSettings": {
+    "host": "ftp.ryan-belisle.com",
+    "port": 21,
+    "username": "ryanbeli",
+    "password": "@436StaffordSt",
+    "path": "public_html/clients/picnet/soapbox/prototypes/soapbox-petitions/converted-html/"
+  }
 }
+

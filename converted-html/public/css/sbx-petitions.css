@@ -87,6 +87,10 @@ td.full {
 .btn-primary:hover {
   background: #111;
 }
+.btn-small {
+  padding: 10px 20px;
+  font-size: 14px;
+}
 .form-actions {
   margin: 0;
   padding: 0;
@@ -182,7 +186,7 @@ select.select {
 .petition-letter {
   font-family: Courier;
 }
-.petition-supporterslist {
+.petition-supporters-list {
   margin: 0px;
 }
 .supporter-item {
@@ -196,6 +200,7 @@ select.select {
 .supporter-item:first-child {
   border-top: none;
   padding-top: 0px;
+  margin-top: 0px;
 }
 .supporter-headline {
   position: relative;
@@ -243,6 +248,9 @@ select.select {
     line-height: 1.2em;
   }
 }
+@media (max-width: 767px) {
+  
+}
 @media (max-width: 480px) {
   .petition-progchart {
     width: 70px;
@@ -264,10 +272,24 @@ select.select {
     font-size: 14px;
     line-height: 1.2em;
   }
+  .supporter-location {
+    display: block;
+    padding-left: 0px;
+  }
 }
 .section-petition-letter {
   padding: 30px 50px 30px 30px;
   box-shadow: 0px 0px 10px #ccc;
   border-left: 30px solid #ccc;
   background: #f2f2f2;
+}
+.petition-letter-title {
+  margin-top: 0px;
+}
+@media (max-width: 480px) {
+  .section-petition-letter {
+    padding-left: 20px;
+    padding-right: 20px;
+    border-left: 0px;
+  }
 }

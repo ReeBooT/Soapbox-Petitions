@@ -1,3 +1,33 @@
+.w100 {
+  width: 100%;
+}
+.w90 {
+  width: 90%;
+}
+.w80 {
+  width: 80%;
+}
+.w70 {
+  width: 70%;
+}
+.w60 {
+  width: 60%;
+}
+.w50 {
+  width: 50%;
+}
+.w40 {
+  width: 40%;
+}
+.w30 {
+  width: 30%;
+}
+.w20 {
+  width: 20%;
+}
+.w10 {
+  width: 10%;
+}
 .section {
   color: #555;
   margin: 46px 0 48px 0;
@@ -137,4 +167,24 @@ h1.title {
 }
 .socialshare:after {
   clear: both;
+}
+.stickybar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: 0;
+  height: auto;
+  width: 100%;
+  background: #999;
+  z-index: 9999;
+}
+.stickybar-inner {
+  padding: 8px 8px;
+  text-align: center;
+}
+.stickybar-fixed-bottom {
+  bottom: 0;
+  -webkit-box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1);
 }

@@ -1,3 +1,11 @@
+{% if formtoggle_type == 'sticky' %}
+<footer class="stickybar stickybar-fixed-bottom petition-stickybar visible-phone">
+	<div class="stickybar-inner">
+		{% include "molecules/mol-formtoggle" %}
+	</div>	
+</footer>
+{% else %}
 <div class="section section-petition-formtoggle" id="section-petitionFormToggle">
 	{% include "molecules/mol-formtoggle" %}
 </div>
+{% endif %}

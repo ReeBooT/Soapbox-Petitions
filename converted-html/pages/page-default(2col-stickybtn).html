@@ -69,7 +69,7 @@
 
 	<header class="jumbotron subhead">
   		<div class="container">
-   			<h1>Layout: Default (1 Column Form)</h1>
+   			<h1>Layout: Default (2 Column) w/ Sticky Btn</h1>
     		<p class="lead"></p>
   		</div>
 	</header>
@@ -77,15 +77,33 @@
 		<div class="row">
 			
 
-	<div class="span8">
-		<div id="page" class="sbx petitions petitions-view-petition lay-1col">
+	<div class="span12">
+		<div id="page" class="sbx petitions petitions-view-petition lay-2col">
+
+	
+	
+	
+	
+<footer class="stickybar stickybar-fixed-bottom petition-stickybar visible-phone">
+	<div class="stickybar-inner">
+		<div class="petition-formtoggle">
+	<button class="btn btn-primary btn-petition-formtoggle btn-small w90" type="button">SIGN THE PETITION</button>
+</div>
+	</div>	
+</footer>
+
+
 	<div class="section section-pageheader section-petition-pagehdr" id="section-petitionHeader">
 	<h1 class="title petition-title">Soapbox Petitions Dual Line Page Title</h1>
 </div>
-	<div class="section section-media section-petition-media" id="section-petitionMedia">
+
+	<div class="row-fluid">
+		<div class="span8 petitions-col-main">	
+						
+			<div class="section section-media section-petition-media" id="section-petitionMedia">
 	<img class="petition-img" src="http://placehold.it/940x520&text=+" />
 </div>
-	<div class="section section-petition-progress" id="section-petitionProgress">
+			<div class="section section-petition-progress" id="section-petitionProgress">
 	<div class="petition-progress">
 	<div class="petition-chart">
 		<div id="petitionProgressChart" class="petition-progchart" data-percent="96">
@@ -102,15 +120,88 @@
 	</div>
 </div>
 </div>
-	<div class="section section-pageintro section-petition-pageintro" id="section-petitionIntro">
+			<div class="section section-pageintro section-petition-pageintro" id="section-petitionIntro">
 	<div class="pageintro petition-pageintro">
 	<p>Page intro/description nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
 	<p>Vestibulum id ligula porta felis euismod semper. Vestibulum id ligula porta felis euismod semper. Nulla vitae elit libero, a pharetra augue. Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Maecenas faucibus mollis interdum.</p>
 </div>
+</div>	
+
+			
+			
+			
+			
+<div class="section section-petition-formtoggle" id="section-petitionFormToggle">
+	<div class="petition-formtoggle">
+	<button class="btn btn-primary btn-petition-formtoggle " type="button">SIGN THE PETITION</button>
 </div>
-	<div class="section section-petition-form " id="section-petitionForm">
+</div>
+
+
+			<div class="section section-petition-letter" id="section-petitionLetter">
+	<h3 class="section-title petition-letter-title">Letter</h3>
+	<div class="petition-letter">
+	<p>Nullam quis risus eget urna mollis ornare vel eu leo. Curabitur blandit tempus porttitor. Donec id elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+	<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas sed diam eget risus varius blandit sit amet non magna. Nulla vitae elit libero, a pharetra augue. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id ligula porta felis euismod semper. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+	<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+</div>
+</div>
+			<div class="section section-petition-supporters" id="section-petitionSupporters">
+	<h3 class="section-title petition-supporterstitle">Supporters</h3>
+	<ul class="petition-supporters-list">
+	<li class="supporter-item">
+		<div class="supporter-headline">
+			<strong class="supporter-name">Ryan Belisle</strong>
+			<span class="supporter-location">Charlton, MA 01507</span>
+			<time datetime="2013-10-14" class="supporter-time">4 hr ago</time>
+		</div>
+		<div class="supporter-text">
+			<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Vestibulum id ligula porta felis euismod semper. Maecenas faucibus mollis interdum.</p>
+		</div>
+	</li>
+	<li class="supporter-item">
+		<div class="supporter-headline">
+			<strong class="supporter-name">Timothy Forbes</strong>
+			<span class="supporter-location">Washington, DC USA</span>
+			<time datetime="2013-10-14" class="supporter-time">12 hr ago</time>
+		</div>
+		<div class="supporter-text">
+			<p>Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur. Donec id elit non mi porta gravida at eget metus. Etiam porta sem malesuada magna mollis euismod.</p>
+		</div>
+	</li>
+	<li class="supporter-item">
+		<div class="supporter-headline">
+			<strong class="supporter-name">Ryan Ozimek</strong>
+			<span class="supporter-location">Washington, DC USA</span>
+			<time datetime="2013-10-14" class="supporter-time">2 days ago</time>
+		</div>
+		<div class="supporter-text">
+			<p>Sed posuere consectetur est at lobortis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit tempus porttitor. Nullam id dolor id nibh ultricies vehicula ut id elit. Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+		</div>
+	</li>
+</ul>
+</div>
+			<div class="section section-socialshare petition-socialshare" id="section-petitionSocialShare">
+	<div class="socialshare petition-socialshare">
+	<h5 class="share-title">Help Spread the Word:</h5>
+	<ul class="share-list">
+		<li class="share-item"><a href="#" class="share-link"><i class="icon-facebook"></i></a></li>
+		<li class="share-item"><a href="#" class="share-link"><i class="icon-twitter"></i></a></li>
+	</ul>
+</div>
+</div>
+			<div class="section section-pageoutro section-petition-pageoutro" id="petitionOutro">
+	<div class="pageoutro petition-pageoutro">
+	<p>Page outro nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+</div>
+</div>
+		</div>
+		<div class="span4 petitions-col-sidebar">
+			<div class="petitions-sidebar" id="petitionSidebar">
+				
+				<div class="section section-petition-form form-l-vert-w100 form-cg-mrg-small hidden-phone" id="section-petitionForm">
 	<h3 class="section-title petition-formtitle">Sign the Petition</h3>
-	<form class="petition-form " action="#" id="petitionForm">
+	<form class="petition-form form-l-vert-w100 form-cg-mrg-small hidden-phone" action="#" id="petitionForm">
 	<div class="petition-formintro">
 		<p>Sign form intro id dolor id nibh ultricies vehicula ut id elit. Donec id elit non mi porta gravida at eget metus.</p>
 	</div>
@@ -223,67 +314,10 @@
 	</div>
 </form>
 </div>
-	<div class="section section-petition-letter" id="section-petitionLetter">
-	<h3 class="section-title petition-letter-title">Letter</h3>
-	<div class="petition-letter">
-	<p>Nullam quis risus eget urna mollis ornare vel eu leo. Curabitur blandit tempus porttitor. Donec id elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
-	<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas sed diam eget risus varius blandit sit amet non magna. Nulla vitae elit libero, a pharetra augue. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id ligula porta felis euismod semper. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
-	<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
-</div>
-</div>
-	<div class="section section-petition-supporters" id="section-petitionSupporters">
-	<h3 class="section-title petition-supporterstitle">Supporters</h3>
-	<ul class="petition-supporters-list">
-	<li class="supporter-item">
-		<div class="supporter-headline">
-			<strong class="supporter-name">Ryan Belisle</strong>
-			<span class="supporter-location">Charlton, MA 01507</span>
-			<time datetime="2013-10-14" class="supporter-time">4 hr ago</time>
+			</div>
 		</div>
-		<div class="supporter-text">
-			<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Vestibulum id ligula porta felis euismod semper. Maecenas faucibus mollis interdum.</p>
-		</div>
-	</li>
-	<li class="supporter-item">
-		<div class="supporter-headline">
-			<strong class="supporter-name">Timothy Forbes</strong>
-			<span class="supporter-location">Washington, DC USA</span>
-			<time datetime="2013-10-14" class="supporter-time">12 hr ago</time>
-		</div>
-		<div class="supporter-text">
-			<p>Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur. Donec id elit non mi porta gravida at eget metus. Etiam porta sem malesuada magna mollis euismod.</p>
-		</div>
-	</li>
-	<li class="supporter-item">
-		<div class="supporter-headline">
-			<strong class="supporter-name">Ryan Ozimek</strong>
-			<span class="supporter-location">Washington, DC USA</span>
-			<time datetime="2013-10-14" class="supporter-time">2 days ago</time>
-		</div>
-		<div class="supporter-text">
-			<p>Sed posuere consectetur est at lobortis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit tempus porttitor. Nullam id dolor id nibh ultricies vehicula ut id elit. Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-		</div>
-	</li>
-</ul>
-</div>
-	<div class="section section-socialshare petition-socialshare" id="section-petitionSocialShare">
-	<div class="socialshare petition-socialshare">
-	<h5 class="share-title">Help Spread the Word:</h5>
-	<ul class="share-list">
-		<li class="share-item"><a href="#" class="share-link"><i class="icon-facebook"></i></a></li>
-		<li class="share-item"><a href="#" class="share-link"><i class="icon-twitter"></i></a></li>
-	</ul>
-</div>
-</div>
-	<div class="section section-pageoutro section-petition-pageoutro" id="petitionOutro">
-	<div class="pageoutro petition-pageoutro">
-	<p>Page outro nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
-</div>
-</div>
-</div>
 	</div>
-	<div class="span4">
-		<!-- Showing pace for SBX Template Sidebar -->
+</div>
 	</div>
 
 
