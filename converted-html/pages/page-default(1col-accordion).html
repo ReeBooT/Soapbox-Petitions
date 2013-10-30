@@ -140,11 +140,11 @@
 </div>
 
 
-	<div class="section section-petition-mobile-accordion" id="section-petitionMobileAccordion">
-    <div id="demo-accordion" class="visible-phone">
-        <section>
-            <h3>Letter</h3>
-            <div>
+	<div class="section section-petition-accordion" id="section-petitionAccordion">
+    <div class="accordion-petition visible-phone" id="accordion-petition">
+        <section class="accordion-petition-item">
+            <h3 class="accordion-petition-header accordion-petition-letter-header">Letter</h3>
+            <div class="accordion-petition-body accordion-petition-letter-body">
                 <div class="petition-letter">
 	<p>Nullam quis risus eget urna mollis ornare vel eu leo. Curabitur blandit tempus porttitor. Donec id elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
 	<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas sed diam eget risus varius blandit sit amet non magna. Nulla vitae elit libero, a pharetra augue. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id ligula porta felis euismod semper. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
@@ -152,9 +152,9 @@
 </div>
             </div>
         </section>
-        <section>
-            <h3>Supporters</h3>
-            <div>
+        <section class="accordion-petition-item">
+            <h3 class="accordion-petition-header accordion-petition-supporters-header">Supporters</h3>
+            <div class="accordion-petition-body accordion-petition-supporters-body">
                 <ul class="petition-supporters-list">
 	<li class="supporter-item">
 		<div class="supporter-headline">
@@ -272,7 +272,7 @@
 	<script type="text/javascript">
 		// $('#petitionSidebar').affix()
 
-		$(function() {
+		$(document).ready(function () {
 		    $('.petition-progchart').easyPieChart({
 		    	onStep: function(from, to, percent) {
 						$(this.el).find('.percent').text(Math.round(percent));
@@ -283,19 +283,25 @@
 		        lineWidth: 20,
 		        size: 140
 
-		    });
+		    });			
+
 		});
 
 
 		$(document).ready(function () {
-            var demo = $("#demo-accordion").zozoAccordion({
+            var demo = $("#accordion-petition").zozoAccordion({
                 theme: "white",
                 active: false,
                 sectionSpacing: 0,
                 shadows: false,
                 responsive: true,
                 expandMode: "multiple",
-                rounded: true
+                rounded: false,
+                headerSize: 48,
+                showIcons: true,
+                animation: {
+        			type: "css"
+    			}
             });
         });
 

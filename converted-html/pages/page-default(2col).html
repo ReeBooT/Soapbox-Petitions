@@ -432,7 +432,7 @@
 	<script type="text/javascript">
 		// $('#petitionSidebar').affix()
 
-		$(function() {
+		$(document).ready(function () {
 		    $('.petition-progchart').easyPieChart({
 		    	onStep: function(from, to, percent) {
 						$(this.el).find('.percent').text(Math.round(percent));
@@ -443,19 +443,25 @@
 		        lineWidth: 20,
 		        size: 140
 
-		    });
+		    });			
+
 		});
 
 
 		$(document).ready(function () {
-            var demo = $("#demo-accordion").zozoAccordion({
+            var demo = $("#accordion-petition").zozoAccordion({
                 theme: "white",
                 active: false,
                 sectionSpacing: 0,
                 shadows: false,
                 responsive: true,
                 expandMode: "multiple",
-                rounded: true
+                rounded: false,
+                headerSize: 48,
+                showIcons: true,
+                animation: {
+        			type: "css"
+    			}
             });
         });
 

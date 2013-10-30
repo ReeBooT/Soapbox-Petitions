@@ -1,9 +1,9 @@
 ﻿/**************************************************************************
-*	@name		    Zozo UI Accordion
-*	@descripton	    Create awesome accordion
-*	@version	    4.0
+*   @name           Zozo UI Accordion
+*   @descripton     Create awesome accordion
+*   @version        4.0
 *   @requires       jQuery v1.7 or later
-*	@copyright      Copyright (c) 2013 Zozo UI
+*   @copyright      Copyright (c) 2013 Zozo UI
 *   @author         Zozo UI
 *   @URL:           http://www.zozoui.com
 **************************************************************************/
@@ -50,27 +50,28 @@ Vertical Structure
 
 .z-accordion.vertical {
     /*box-shadow: 0 1px 2px rgba(0, 0, 0, .1);*/
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    /*    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 14px;
     line-height: 20px;
     color: #333;
-   
+   */
 }
 
     .z-accordion.vertical > section > h3 {
-        color: #666;
-        font-size: 12px;
-        font-weight: normal;
-        line-height: 40px;
-        height:40px;
-        text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6);
-        padding: 0 12px;
+        color: #999;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 48px;
+        height:48px;
+        /*text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6);*/
+        padding: 0 20px;
         margin: 0;        
         display: block;
         position: relative;
         outline: none;
         cursor: pointer;
         text-decoration: none;
+        text-transform: uppercase;
         /*background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.035));
         -webkit-box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 1px 1px rgba(0, 0, 0, 0.2);*/
     }
@@ -92,8 +93,8 @@ Vertical Structure
            .z-accordion.z-focus,  
            .z-accordion.vertical > section > h3.z-focus, 
            .z-accordion.horizontal > section > h3.z-focus .z-title{
-                font-weight: bold  !important;                
-                color: black;
+                /*font-weight: bold  !important;                
+                color: black;*/
               
                 background-color:white !important;   
                   background:white !important;                   
@@ -141,7 +142,8 @@ Vertical Structure
                 }
 
         .z-accordion.vertical > section.z-active > h3 {
-            font-weight: bold;
+            /*font-weight: bold;*/
+            border-bottom: none;
         }
 
             .z-accordion.vertical > section.z-active > h3 > .z-arrow, 
@@ -193,7 +195,7 @@ Vertical Structure
             /*height: auto; */    
             /*max-height: 9999px;                         */
             /*overflow:auto;*/
-            padding: 20px 15px 10px 15px;
+            padding: 8px 20px 24px 20px;
         }
       .z-slider-wrapper > .z-accordion.transition.vertical > section> .z-content > .z-auto-g {           
             padding: 0; /*version 4.0*/
@@ -904,9 +906,9 @@ Theming
 .z-accordion.white.z-bordered,
 .z-accordion.white.z-bordered > section > h3,
 .z-accordion.white.z-bordered > section > h3 > .z-title,
-.z-accordion.white.z-bordered > section > .z-content {border-color: #C3C3C3;border-color: #CECECE;}
+.z-accordion.white.z-bordered > section > .z-content {border-color: #ddd;border-color: #ddd;}
 .z-accordion.white.vertical > section > h3,
-.z-accordion.white.horizontal > section > h3 > .z-title {color:#333;text-shadow: 0 1px white;background-color: #fff;}
+.z-accordion.white.horizontal > section > h3 > .z-title {color:#999;/*text-shadow: 0 1px white;*/background-color: #fff;}
 .z-accordion.white.z-scrollable > section.z-active .z-content::-webkit-scrollbar-thumb {
     background: rgba(100, 100, 100, 0.15);
     border-color: rgba(100, 100, 100, 0.15);
@@ -1612,7 +1614,7 @@ Navitation Accordion
 
 .z-accordion.blue .z-sub-nav li a{background: #2A8CAF;}
 .z-accordion.blue .z-sub-nav li a:hover{background: #5BC4E9;}
-		
+        
 .z-accordion.lightblue .z-sub-nav li a{background: #49B9D5;}
 .z-accordion.lightblue .z-sub-nav li a:hover{background: #59C5E0;}
 

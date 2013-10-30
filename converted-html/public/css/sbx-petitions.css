@@ -249,7 +249,16 @@ select.select {
   }
 }
 @media (max-width: 767px) {
-  
+  .petition-letter {
+    font-size: 14px;
+    line-height: 24px;
+  }
+  .petition-letter p:last-child {
+    margin-bottom: 0;
+  }
+  .supporter-item:last-child .supporter-text p:last-child {
+    margin-bottom: 0;
+  }
 }
 @media (max-width: 480px) {
   .petition-progchart {

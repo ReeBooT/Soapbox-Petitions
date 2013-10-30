@@ -1,14 +1,14 @@
-<div class="section section-petition-mobile-accordion" id="section-petitionMobileAccordion">
-    <div id="demo-accordion" class="visible-phone">
-        <section>
-            <h3>Letter</h3>
-            <div>
+<div class="section section-petition-accordion" id="section-petitionAccordion">
+    <div class="accordion-petition visible-phone" id="accordion-petition">
+        <section class="accordion-petition-item">
+            <h3 class="accordion-petition-header accordion-petition-letter-header">Letter</h3>
+            <div class="accordion-petition-body accordion-petition-letter-body">
                 {% include "molecules/mol-letter" %}
             </div>
         </section>
-        <section>
-            <h3>Supporters</h3>
-            <div>
+        <section class="accordion-petition-item">
+            <h3 class="accordion-petition-header accordion-petition-supporters-header">Supporters</h3>
+            <div class="accordion-petition-body accordion-petition-supporters-body">
                 {% include "molecules/mol-supporters" %}
             </div>
         </section>
