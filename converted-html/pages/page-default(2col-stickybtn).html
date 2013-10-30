@@ -57,7 +57,6 @@
 						<a id="drop1" href="page-default(1col).html" role="button" class="dropdown-toggle" data-toggle="dropdown">Templates <b class="caret"></b></a>
 						<ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
 							<li role="presentation"><a role="menuitem" tabindex="-1" href="page-default(1col).html">Default (1col)</a></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" href="page-default(1col-form).html">Default (1col Form)</a></li>
 							<li role="presentation"><a role="menuitem" tabindex="-1" href="page-default(1col-stickybtn).html">Default (1col) w/ Sticky Button</a></li>
 							<li role="presentation"><a role="menuitem" tabindex="-1" href="page-default(1col-accordion).html">Default (1col) w/ Accordion</a></li>
 							<li role="presentation"><a role="menuitem" tabindex="-1" href="page-default(2col).html">Default (2col)</a></li>
@@ -89,10 +88,11 @@
 	
 	
 	
-<footer class="stickybar stickybar-fixed-bottom petition-stickybar visible-phone">
+
+<footer class="stickybar stickybar-fixed-bottom petition-stickybar visible-phone" id="petition-stickybar">
 	<div class="stickybar-inner">
 		<div class="petition-formtoggle">
-	<button class="btn btn-primary btn-petition-formtoggle btn-small w90" type="button">SIGN THE PETITION</button>
+	<button class="btn btn-primary btn-petition-formtoggle btn-small w90" id="btn-petition-formToggleSticky" type="button">SIGN THE PETITION</button>
 </div>
 	</div>	
 </footer>
@@ -127,8 +127,10 @@
 </div>
 			<div class="section section-pageintro section-petition-pageintro" id="section-petitionIntro">
 	<div class="pageintro petition-pageintro">
-	<p>Page intro/description nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
-	<p>Vestibulum id ligula porta felis euismod semper. Vestibulum id ligula porta felis euismod semper. Nulla vitae elit libero, a pharetra augue. Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Maecenas faucibus mollis interdum.</p>
+	<div class="petition-pageintro-body">
+		<p>Page intro/description nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+		<p>Vestibulum id ligula porta felis euismod semper. Vestibulum id ligula porta felis euismod semper. Nulla vitae elit libero, a pharetra augue. Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Maecenas faucibus mollis interdum.</p>
+	</div>
 </div>
 </div>	
 
@@ -136,9 +138,10 @@
 			
 			
 			
+
 <div class="section section-petition-formtoggle " id="section-petitionFormToggle">
 	<div class="petition-formtoggle">
-	<button class="btn btn-primary btn-petition-formtoggle " type="button">SIGN THE PETITION</button>
+	<button class="btn btn-primary btn-petition-formtoggle " id="btn-petition-formToggle" type="button">SIGN THE PETITION</button>
 </div>
 </div>
 
@@ -204,9 +207,10 @@
 		<div class="span4 petitions-col-sidebar">
 			<div class="petitions-sidebar" id="petitionSidebar">
 				
-				<div class="section section-petition-form form-l-vert-w100 form-cg-mrg-small hidden-phone" id="section-petitionForm">
+				<div class="section section-petition-form is-hidden form-l-vert-w100 form-cg-mrg-small hidden-phone" id="section-petitionForm">
 	<h3 class="section-title petition-formtitle">Sign the Petition</h3>
-	<form class="petition-form form-l-vert-w100 form-cg-mrg-small hidden-phone" action="#" id="petitionForm">
+	
+<form class="petition-form form-l-vert-w100 form-cg-mrg-small hidden-phone" action="#" id="petitionForm">
 	<div class="petition-formintro">
 		<p>Sign form intro id dolor id nibh ultricies vehicula ut id elit. Donec id elit non mi porta gravida at eget metus.</p>
 	</div>
@@ -334,27 +338,55 @@
 	<script src="../public/js/bootstrap.min.js"></script>
 	<script src="../public/js/easypiechart/dist/jquery.easypiechart.min.js"></script>
 	<script src="../public/js/zozo.accordion.4.0/js/zozo.accordion.min.js"></script>
+	<script src="../public/js/readmore.js/readmore.min.js"></script>
+	<script src="../public/js/enquire.js/dist/enquire.min.js"></script>
+	<script src="../public/js/jcanvas.min.js"></script>
  
 	<script type="text/javascript">
 		// $('#petitionSidebar').affix()
 
 		$(document).ready(function () {
+
+			enquire.register("screen and (max-width: 767px)", {
+			    deferSetup : true,
+			    setup : function() {
+			        // load content via AJAX
+			    },
+			    match : function() {
+			        // show sidebar
+			        $('.petition-pageintro-body').readmore({
+	    				speed: 100,
+	    				maxHeight: 96,
+	    				moreLink: '<a href="#" class="petition-pageintro-toggle petition-pageintro-togglemore"><i class="icon-chevron-down"></i></a>',
+	    				lessLink: '<a href="#" class="petition-pageintro-toggle petition-pageintro-toggleless"><i class="icon-chevron-up"></i></a>',
+	   					embedCSS: false
+	  				});
+			    },
+			    destroy : function() {
+			        // hide sidebar
+			    }  
+			});
+		});
+    	
+
+		$(document).ready(function () {
+
 		    $('.petition-progchart').easyPieChart({
 		    	onStep: function(from, to, percent) {
-						$(this.el).find('.percent').text(Math.round(percent));
-					},
+					$(this.el).find('.percent').text(Math.round(percent));
+				},
 				barColor: "#555",
 				trackColor: "#ccc",
 		        lineCap: "butt",
 		        lineWidth: 20,
 		        size: 140
-
 		    });			
 
 		});
 
 
 		$(document).ready(function () {
+
             var demo = $("#accordion-petition").zozoAccordion({
                 theme: "white",
                 active: false,
@@ -369,7 +401,25 @@
         			type: "css"
     			}
             });
+
         });
+
+		$(document).ready(function () {
+
+			$("#btn-petition-formToggle").click(function() {
+	  			$("#section-petitionFormToggle").fadeOut( "fast", function() {});
+	  			$("#section-petitionFormToggle").addClass("is-hidden");
+	  			$("#petition-stickybar").addClass("is-hidden");
+	  			$("#section-petitionForm").fadeIn( "fast", function() {});
+			});
+			$("#btn-petition-formToggleSticky").click(function() {
+	  			$("#petition-stickybar").fadeOut( "fast", function() {});
+	  			$("#petition-stickybar").addClass("is-hidden");
+	  			$("#section-petitionFormToggle").addClass("is-hidden");
+	  			$("#section-petitionForm").fadeIn( "fast", function() {});
+			});
+		
+		});
 
 	</script>
 

@@ -3,6 +3,9 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+.is-hidden {
+  display: none;
+}
 .clearfix {
   *zoom: 1;
 }
@@ -126,6 +129,17 @@ select.select {
 }
 .petition-title {
   margin: 0px;
+}
+.petition-pageintro-toggle,
+.petition-pageintro-body {
+  display: block;
+  width: 100%;
+}
+.petition-pageintro-toggle {
+  text-align: center;
+}
+.petition-pageintro-body {
+  overflow: hidden;
 }
 .petition-progress {
   display: table;
@@ -294,6 +308,9 @@ select.select {
 }
 .petition-letter-title {
   margin-top: 0px;
+}
+.petition-stickybar.is-hidden {
+  display: none !important;
 }
 @media (max-width: 480px) {
   .section-petition-letter {
