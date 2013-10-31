@@ -18,7 +18,6 @@ http://www.ryan-belisle.com/clients/picnet/soapbox/prototypes/soapbox-petitions/
 * Modernizr
 * Selectivizr
 * jQuery 1.9.1
-* 
 
 ### IE 8/9 NOTES: ###
 
