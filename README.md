@@ -18,6 +18,7 @@ http://www.ryan-belisle.com/clients/picnet/soapbox/prototypes/soapbox-petitions/
 * Modernizr
 * Selectivizr
 * jQuery 1.9.1
+* Placeholders.js: http://jamesallardice.github.io/Placeholders.js/
 
 ### IE 8/9 NOTES: ###
 
