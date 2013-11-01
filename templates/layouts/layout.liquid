@@ -23,6 +23,8 @@
 
 	{{ "modernizr-latest.js" | asset_url | script_tag }}
 	{{ "selectivizr.js" | asset_url | script_tag }}
+	{{ "/respond/respond.src.js" | asset_url | script_tag }}
+	{{ "/placeholders/placeholders.min.js" | asset_url | script_tag }}
 </head>
 <body>
 
@@ -42,11 +44,11 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	
 	{{ "bootstrap.js" | asset_url | script_tag }}
-	{{ "/easypiechart/dist/jquery.easypiechart.min.js" | asset_url | script_tag }}
+	{% comment %}{{ "/easypiechart/dist/jquery.easypiechart.min.js" | asset_url | script_tag }}{% endcomment %}
 	{{ "/zozo.accordion.4.0/js/zozo.accordion.min.js" | asset_url | script_tag }}
-	{{ "/readmore.js/readmore.min.js" | asset_url | script_tag }}
-	{{ "/enquire.js/dist/enquire.min.js" | asset_url | script_tag }}
-	{{ "jcanvas.min.js" | asset_url | script_tag }}
+	{{ "/readmore/readmore.min.js" | asset_url | script_tag }}
+	{{ "/media-match/media.match.min.js" | asset_url | script_tag }}
+	{{ "/enquire/dist/enquire.min.js" | asset_url | script_tag }}
  
 	<script type="text/javascript">
 		// $('#petitionSidebar').affix()
@@ -72,28 +74,25 @@
 			        // hide sidebar
 			    }  
 			});
-		});
-    	
-
-		$(document).ready(function () {
-
-		    $('.petition-progchart').easyPieChart({
-		    	onStep: function(from, to, percent) {
-					$(this.el).find('.percent').text(Math.round(percent));
-				},
-				barColor: "#555",
-				trackColor: "#ccc",
-		        lineCap: "butt",
-		        lineWidth: 20,
-		        size: 140
-		    });			
-
-		});
 
 
-		$(document).ready(function () {
+			// INIT: Petition Donut Chart
 
-            var demo = $("#accordion-petition").zozoAccordion({
+ 			// $('.petition-progchart').easyPieChart({
+		  //   	onStep: function(from, to, percent) {
+				// 	$(this.el).find('.percent').text(Math.round(percent));
+				// },
+				// barColor: "#555",
+				// trackColor: "#ccc",
+		  //       lineCap: "butt",
+		  //       lineWidth: 20,
+		  //       size: 140
+		  //   });
+
+
+			
+			// INIT: Petitition Accordion
+			var demo = $("#accordion-petition").zozoAccordion({
                 theme: "white",
                 active: false,
                 sectionSpacing: 0,
@@ -108,10 +107,8 @@
     			}
             });
 
-        });
 
-		$(document).ready(function () {
-
+			// INIT: Petition Form Toggles
 			$("#btn-petition-formToggle").click(function() {
 	  			$("#section-petitionFormToggle").fadeOut( "fast", function() {});
 	  			$("#section-petitionFormToggle").addClass("is-hidden");
@@ -124,7 +121,8 @@
 	  			$("#section-petitionFormToggle").addClass("is-hidden");
 	  			$("#section-petitionForm").fadeIn( "fast", function() {});
 			});
-		
+
+
 		});
 
 	</script>
