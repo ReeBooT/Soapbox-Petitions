@@ -16,13 +16,10 @@
 	<link href="../public/css/mixture.min.css" rel="stylesheet" type="text/css" media="all"/>
 	<link href="../public/css/sbx-core.min.css" rel="stylesheet" type="text/css" media="all"/>
 	<link href="../public/css/sbx-petitions.min.css" rel="stylesheet" type="text/css" media="all"/>
-
 	<link href="../public/js/zozo.accordion.4.0/css/zozo.accordion.min.css" rel="stylesheet" type="text/css" media="all"/>
 
 	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
-
-	<script src="../public/js/modernizr-latest.min.js"></script>
-	<script src="../public/js/selectivizr.min.js"></script>
+	
 </head>
 <body>
 
@@ -303,9 +300,10 @@
 		<div class="span4 petitions-col-sidebar">
 			<div class="petitions-sidebar" id="petitionSidebar">
 				
-				<div class="section section-petition-form " id="section-petitionForm">
+				
+				<div class="section section-petition-form hidden-phone" id="section-petitionForm">
 	<h3 class="section-title petition-formtitle">Sign the Petition</h3>
-	<form class="petition-form form-l-vert-w100 form-cg-mrg-small hidden-phone" action="#" id="petitionForm">
+	<form class="petition-form form-l-vert-w100 form-cg-mrg-small" action="#" id="petitionForm">
 	<div class="petition-formintro">
 		<p>Sign form intro id dolor id nibh ultricies vehicula ut id elit. Donec id elit non mi porta gravida at eget metus.</p>
 	</div>
@@ -435,12 +433,18 @@
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	
+	<script src="../public/js/modernizr-latest.min.js"></script>
+
+	
+	<script src="../public/js/selectivizr.min.js"></script>
+	<script src="../public/js/respond/respond.src.min.js"></script>
+	<script src="../public/js/placeholders/placeholders.min.js"></script>
+	<script src="../public/js/media-match/media.match.min.js"></script>
+
 	<script src="../public/js/bootstrap.min.js"></script>
-	<script src="../public/js/easypiechart/dist/jquery.easypiechart.min.js"></script>
 	<script src="../public/js/zozo.accordion.4.0/js/zozo.accordion.min.js"></script>
-	<script src="../public/js/readmore.js/readmore.min.js"></script>
-	<script src="../public/js/enquire.js/dist/enquire.min.js"></script>
-	<script src="../public/js/jcanvas.min.js"></script>
+	<script src="../public/js/readmore/readmore.min.js"></script>
+	<script src="../public/js/enquire/dist/enquire.min.js"></script>
  
 	<script type="text/javascript">
 		// $('#petitionSidebar').affix()
@@ -466,28 +470,25 @@
 			        // hide sidebar
 			    }  
 			});
-		});
-    	
-
-		$(document).ready(function () {
-
-		    $('.petition-progchart').easyPieChart({
-		    	onStep: function(from, to, percent) {
-					$(this.el).find('.percent').text(Math.round(percent));
-				},
-				barColor: "#555",
-				trackColor: "#ccc",
-		        lineCap: "butt",
-		        lineWidth: 20,
-		        size: 140
-		    });			
-
-		});
 
 
-		$(document).ready(function () {
+			// INIT: Petition Donut Chart
 
-            var demo = $("#accordion-petition").zozoAccordion({
+ 			// $('.petition-progchart').easyPieChart({
+		  //   	onStep: function(from, to, percent) {
+				// 	$(this.el).find('.percent').text(Math.round(percent));
+				// },
+				// barColor: "#555",
+				// trackColor: "#ccc",
+		  //       lineCap: "butt",
+		  //       lineWidth: 20,
+		  //       size: 140
+		  //   });
+
+
+			
+			// INIT: Petitition Accordion
+			var demo = $("#accordion-petition").zozoAccordion({
                 theme: "white",
                 active: false,
                 sectionSpacing: 0,
@@ -502,10 +503,8 @@
     			}
             });
 
-        });
 
-		$(document).ready(function () {
-
+			// INIT: Petition Form Toggles
 			$("#btn-petition-formToggle").click(function() {
 	  			$("#section-petitionFormToggle").fadeOut( "fast", function() {});
 	  			$("#section-petitionFormToggle").addClass("is-hidden");
@@ -518,7 +517,8 @@
 	  			$("#section-petitionFormToggle").addClass("is-hidden");
 	  			$("#section-petitionForm").fadeIn( "fast", function() {});
 			});
-		
+
+
 		});
 
 	</script>

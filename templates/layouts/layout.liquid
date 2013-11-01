@@ -16,15 +16,10 @@
 	{{ "mixture.css" | asset_url | stylesheet_tag }}
 	{{ "sbx-core.css" | asset_url | stylesheet_tag }}
 	{{ "sbx-petitions.css" | asset_url | stylesheet_tag }}
-
 	{{ "zozo.accordion.css" | asset_url | stylesheet_tag }}
 
 	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
-
-	{{ "modernizr-latest.js" | asset_url | script_tag }}
-	{{ "selectivizr.js" | asset_url | script_tag }}
-	{{ "/respond/respond.src.js" | asset_url | script_tag }}
-	{{ "/placeholders/placeholders.min.js" | asset_url | script_tag }}
+	
 </head>
 <body>
 
@@ -43,11 +38,17 @@
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	
+	{{ "modernizr-latest.js" | asset_url | script_tag }}
+
+	{% comment %}BEGIN: For IE{% endcomment %}
+	{{ "selectivizr.js" | asset_url | script_tag }}
+	{{ "/respond/respond.src.js" | asset_url | script_tag }}
+	{{ "/placeholders/placeholders.min.js" | asset_url | script_tag }}
+	{{ "/media-match/media.match.min.js" | asset_url | script_tag }}
+
 	{{ "bootstrap.js" | asset_url | script_tag }}
-	{% comment %}{{ "/easypiechart/dist/jquery.easypiechart.min.js" | asset_url | script_tag }}{% endcomment %}
 	{{ "/zozo.accordion.4.0/js/zozo.accordion.min.js" | asset_url | script_tag }}
 	{{ "/readmore/readmore.min.js" | asset_url | script_tag }}
-	{{ "/media-match/media.match.min.js" | asset_url | script_tag }}
 	{{ "/enquire/dist/enquire.min.js" | asset_url | script_tag }}
  
 	<script type="text/javascript">
