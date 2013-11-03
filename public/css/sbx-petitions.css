@@ -83,8 +83,8 @@ td.full {
 }
 .btn-primary {
   font-size: 16px;
+  padding: 12px 30px;
   text-transform: uppercase;
-  padding: 16px 40px;
   background: #333;
   text-decoration: none;
   text-shadow: none;
@@ -95,6 +95,10 @@ td.full {
 .btn-small {
   padding: 10px 20px;
   font-size: 14px;
+}
+.btn-large {
+  font-size: 18px;
+  padding: 16px 40px;
 }
 .form-actions {
   margin: 0;
@@ -177,8 +181,8 @@ select.select {
 .petition-progchart {
   position: relative;
   display: inline-block;
-  width: 140px;
-  height: 140px;
+  width: 100px;
+  height: 100px;
   text-align: center;
 }
 .petition-progchart canvas {
@@ -188,9 +192,9 @@ select.select {
 }
 .petition-progchart .percent {
   display: inline-block;
-  line-height: 140px;
+  line-height: 100px;
   z-index: 2;
-  font-size: 34px;
+  font-size: 20px;
   font-weight: 700;
   color: #222;
 }
@@ -247,18 +251,6 @@ select.select {
   color: #666;
 }
 @media (max-width: 979px) {
-  .petition-progchart {
-    width: 100px;
-    height: 100px;
-  }
-  .petition-progchart canvas {
-    width: 100px;
-    height: 100px;
-  }
-  .petition-progchart .percent {
-    line-height: 100px;
-    font-size: 20px;
-  }
   .petition-prognum {
     font-size: 36px;
     line-height: 1.2em;
@@ -277,18 +269,6 @@ select.select {
   }
 }
 @media (max-width: 480px) {
-  .petition-progchart {
-    width: 70px;
-    height: 70px;
-  }
-  .petition-progchart canvas {
-    width: 70px;
-    height: 70px;
-  }
-  .petition-progchart .percent {
-    line-height: 70px;
-    font-size: 14px;
-  }
   .petition-prognum {
     font-size: 28px;
     line-height: 1.2em;
@@ -303,8 +283,7 @@ select.select {
   }
 }
 .section-petition-letter {
-  padding: 30px 50px 30px 30px;
-  box-shadow: 0px 0px 10px #ccc;
+  padding: 32px 50px 32px 30px;
   border-left: 30px solid #ccc;
   background: #f2f2f2;
 }

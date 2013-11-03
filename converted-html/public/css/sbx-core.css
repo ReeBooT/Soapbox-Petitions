@@ -65,11 +65,11 @@ h1.title {
   line-height: 1.1em;
   color: #222;
 }
-.section-pageintro {
+.pageintro {
   font-size: 18px;
   line-height: 32px;
 }
-.section-pageoutro {
+.pageoutro {
   color: #666;
 }
 .section-mod {
@@ -134,15 +134,15 @@ h1.title {
 .share-list {
   margin: 0px;
 }
-.share-list li {
+.share-item {
   display: inline-block;
   margin: 0 6px;
   list-style: none;
 }
-.share-list a {
+.share-link {
   text-decoration: none;
 }
-.share-list i {
+.share-icon {
   font-size: 32px;
   line-height: 32px;
 }

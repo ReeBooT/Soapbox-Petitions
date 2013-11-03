@@ -16,7 +16,7 @@ Global Reset
 
 
 /* cross browser compatibility html5 tags */
-article, aside, figcaption, figure, footer, header, hgroup, nav, section{display: block;}
+/*article, aside, figcaption, figure, footer, header, hgroup, nav, section{display: block;}*/
 
 
 /*reset*/
@@ -139,6 +139,10 @@ Vertical Structure
 
                 .z-accordion.vertical > section > h3:hover > .z-arrow {
                     opacity: 1;
+                }
+
+                .z-accordion.vertical > section > h3:hover > .z-title {
+                    color: #111;
                 }
 
         .z-accordion.vertical > section.z-active > h3 {
@@ -919,6 +923,7 @@ Theming
     border-color:rgba(100, 100, 100, 0.15);
     box-shadow: 0 0 3px rgba(100, 100, 100, 0.15) inset;
 }
+.z-accordion.white.horizontal > section > h3:hover > .z-title { color: #111;}
 
 /* blue */
 .z-accordion.blue.z-bordered,
@@ -1656,4 +1661,33 @@ border-radius: 5px;
 
 /*#endregion*/
 
+
+
+
+
+.z-accordion.vertical > section > h3 .z-state-close,
+    .z-accordion.vertical > section > h3 .z-state-open
+    {
+        position: absolute;
+        right: 16px;
+        background-position: 0 0;
+        height: 14px;
+        width: 14px;
+        font-size: 14px;
+        line-height: 14px;
+        /*top: 1.25em;*/
+        top: 50%;
+        margin-top: -.45em;
+    }
+ 
+    .z-accordion.vertical > section.z-active > h3 .z-state-close
+    {
+        display: block;
+    }
+ 
+    .z-accordion.vertical > section.z-active > h3 .z-state-open,
+    .z-accordion.vertical > section > h3 .z-state-close
+    {
+        display: none;
+    }
 

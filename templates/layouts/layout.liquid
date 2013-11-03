@@ -19,6 +19,14 @@
 	{{ "zozo.accordion.css" | asset_url | stylesheet_tag }}
 
 	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+
+	{{ "modernizr-latest.min.js" | asset_url | script_tag }}
+
+	{% comment %}BEGIN: For IE, has to be in HEAD to work!{% endcomment %}
+	{{ "selectivizr.js" | asset_url | script_tag }} {% comment %}For IE6-8{% endcomment %}
+	{{ "/respond/respond.src.js" | asset_url | script_tag }} {% comment %}For IE8{% endcomment %}
+	{{ "/placeholders/placeholders.min.js" | asset_url | script_tag }} {% comment %}For IE9-under{% endcomment %}
+	{{ "/easypiechart/demo/excanvas.compiled.min.js" | asset_url | script_tag }} {% comment %}For IE8{% endcomment %}
 	
 </head>
 <body>
@@ -38,23 +46,17 @@
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	
-	{{ "modernizr-latest.js" | asset_url | script_tag }}
-
-	{% comment %}BEGIN: For IE{% endcomment %}
-	{{ "selectivizr.js" | asset_url | script_tag }}
-	{{ "/respond/respond.src.js" | asset_url | script_tag }}
-	{{ "/placeholders/placeholders.min.js" | asset_url | script_tag }}
-	{{ "/media-match/media.match.min.js" | asset_url | script_tag }}
-
 	{{ "bootstrap.js" | asset_url | script_tag }}
+	{{ "/easypiechart/dist/jquery.easypiechart.min.js" | asset_url | script_tag }}
 	{{ "/zozo.accordion.4.0/js/zozo.accordion.min.js" | asset_url | script_tag }}
-	{{ "/readmore/readmore.min.js" | asset_url | script_tag }}
+	{{ "/readmore/readmore.min.js" | asset_url | script_tag }}	
+	{{ "/media-match/media.match.min.js" | asset_url | script_tag }}
 	{{ "/enquire/dist/enquire.min.js" | asset_url | script_tag }}
  
 	<script type="text/javascript">
 		// $('#petitionSidebar').affix()
 
-		$(document).ready(function () {
+		$(window).ready(function () {
 
 			enquire.register("screen and (max-width: 767px)", {
 			    deferSetup : true,
@@ -78,18 +80,16 @@
 
 
 			// INIT: Petition Donut Chart
-
- 			// $('.petition-progchart').easyPieChart({
-		  //   	onStep: function(from, to, percent) {
-				// 	$(this.el).find('.percent').text(Math.round(percent));
-				// },
-				// barColor: "#555",
-				// trackColor: "#ccc",
-		  //       lineCap: "butt",
-		  //       lineWidth: 20,
-		  //       size: 140
-		  //   });
-
+ 			$('#petitionProgressChart').easyPieChart({
+		     	onStep: function(from, to, percent) {
+				 	$(this.el).find('.percent').text(Math.round(percent));
+				},
+				barColor: "#555",
+				trackColor: "#ccc",
+		        lineCap: "butt",
+		        lineWidth: 10,
+		        size: 100
+		    });
 
 			
 			// INIT: Petitition Accordion
@@ -102,7 +102,7 @@
                 expandMode: "multiple",
                 rounded: false,
                 headerSize: 48,
-                showIcons: true,
+                showIcons: false,
                 animation: {
         			type: "css"
     			}

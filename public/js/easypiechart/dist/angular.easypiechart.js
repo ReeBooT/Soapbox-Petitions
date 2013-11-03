@@ -4,49 +4,45 @@
  *
  * @license Dual licensed under the MIT (http://www.opensource.org/licenses/mit-license.php) and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
  * @author Robert Fleischmann <rendro87@gmail.com> (http://robert-fleischmann.de)
- * @version 2.0.5
+ * @version 2.1.0
  **/
 
-(function() {
+(function(root, factory) {
+    if(typeof exports === 'object') {
+        module.exports = factory(require('anuglar'));
+    }
+    else if(typeof define === 'function' && define.amd) {
+        define('EasyPieChart', ['anuglar'], factory);
+    }
+    else {
+        factory(root.anuglar);
+    }
+}(this, function(anuglar) {
 // Angular directives for easyPieChart
-if ( (typeof(angular) === 'object') && (typeof(angular.version) === 'object')){
+if ((typeof(angular) === 'object') && (typeof(angular.version) === 'object')) {
 	angular.module('easypiechart',[])
 	.directive('easypiechart', ['$timeout', function($timeout) {
 		return {
 			restrict: 'A',
 			require: '?ngModel',
 			scope: {
-				percent: '=ngPercent'
+				percent: '=',
+				options: '='
 			},
 			link: function (scope, element, attrs) {
-				var options = {};
-				var fx = attrs.easypiechart;
-				if (fx.length > 0) {
-					fx = fx.split(';'); // CSS like syntax
-					var REkey = new RegExp('[a-z]+', 'i');
-					var REvalue = new RegExp(':.+');
-					// Parse Effects
-					for (var i in fx) {
-						var value = fx[i].match(REkey);
-						var key = fx[i].match(REvalue);
-						value = value[0];
-						key = key[0].substring(1);
-						if (!isNaN(parseInt(key, 10))) {
-							options[value] = parseFloat(key);
-						} else{
-							switch (key) {
-								case 'true':
-									options[value] = true;
-									break;
-								case 'false':
-									options[value] = false;
-									break;
-								default:
-									options[value] = key;
-							}
-						}
-					}
-				}
+				var options = {
+					barColor: '#ef1e25',
+					trackColor: '#f9f9f9',
+					scaleColor: '#dfe0e0',
+					scaleLength: 5,
+					lineCap: 'round',
+					lineWidth: 3,
+					size: 110,
+					rotate: 0,
+					animate: 1000
+				};
+				angular.extend(options, scope.options);
+
 				var pieChart = new EasyPieChart(element[0], options);
 
 				// initial pie rendering
@@ -73,7 +69,6 @@ if ( (typeof(angular) === 'object') && (typeof(angular.version) === 'object')){
 } else{
 	console.log('Angular not detected.');
 }
-
 
 /**
  * Renderer to render the chart on a canvas object
@@ -268,7 +263,7 @@ var EasyPieChart = function(el, opts) {
 		easing: function (x, t, b, c, d) { // more can be found here: http://gsgd.co.uk/sandbox/jquery/easing/
 			t = t / (d/2);
 			if (t < 1) {
-					return c / 2 * t * t + b;
+				return c / 2 * t * t + b;
 			}
 			return -c/2 * ((--t)*(t-2) - 1) + b;
 		},
@@ -327,7 +322,9 @@ var EasyPieChart = function(el, opts) {
 
 		// initial update
 		if (el.dataset && el.dataset.percent) {
-			this.update(parseInt(el.dataset.percent, 10));
+			this.update(parseFloat(el.dataset.percent));
+		} else if (el.getAttribute && el.getAttribute('data-percent')) {
+			this.update(parseFloat(el.getAttribute('data-percent')));
 		}
 	}.bind(this);
 
@@ -337,7 +334,7 @@ var EasyPieChart = function(el, opts) {
 	 * @return {object}          Instance of the plugin for method chaining
 	 */
 	this.update = function(newValue) {
-		newValue = parseInt(newValue, 10);
+		newValue = parseFloat(newValue);
 		if (options.animate) {
 			this.renderer.animate(currentValue, newValue);
 		} else {
@@ -350,4 +347,4 @@ var EasyPieChart = function(el, opts) {
 	init();
 };
 
-}());
+}));

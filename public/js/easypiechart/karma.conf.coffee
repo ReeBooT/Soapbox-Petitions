@@ -11,10 +11,12 @@ module.exports = (config) ->
 
     # list of files / patterns to load in the browser
     files: [
+      "test/polyfills/bind.js",
       "bower_components/angular/angular.js",
       "bower_components/angular-mocks/angular-mocks.js",
-      "bower_components/jquery/jquery.js",
-      "src/**/*.js",
+      "src/renderer/canvas.js",
+      "src/easypiechart.js",
+      "src/angular.directive.js",
       "test/**/*.js"
     ]
 
@@ -42,7 +44,7 @@ module.exports = (config) ->
     # - Safari (only Mac)
     # - PhantomJS
     # - IE (only Windows)
-    browsers: ["Chrome"]
+    browsers: ['Chrome', 'PhantomJS']
 
     # Continuous Integration mode
     # if true, it capture browsers, run tests and exit

@@ -19,6 +19,14 @@
 	<link href="../public/js/zozo.accordion.4.0/css/zozo.accordion.min.css" rel="stylesheet" type="text/css" media="all"/>
 
 	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+
+	<script src="../public/js/modernizr-latest.min.js"></script>
+
+	
+	<script src="../public/js/selectivizr.min.js"></script> 
+	<script src="../public/js/respond/respond.src.min.js"></script> 
+	<script src="../public/js/placeholders/placeholders.min.js"></script> 
+	<script src="../public/js/easypiechart/demo/excanvas.compiled.min.js"></script> 
 	
 </head>
 <body>
@@ -90,7 +98,7 @@
 <footer class="stickybar stickybar-fixed-bottom petition-stickybar visible-phone" id="petition-stickybar">
 	<div class="stickybar-inner">
 		<div class="petition-formtoggle">
-	<button class="btn btn-primary btn-petition-formtoggle btn-small w90" id="btn-petition-formToggleSticky" type="button">SIGN THE PETITION</button>
+	<button class="btn btn-large btn-primary btn-petition-formtoggle btn-small w90" id="btn-petition-formToggleSticky" type="button">SIGN THE PETITION</button>
 </div>
 	</div>	
 </footer>
@@ -136,7 +144,7 @@
 
 <div class="section section-petition-formtoggle hidden-phone" id="section-petitionFormToggle">
 	<div class="petition-formtoggle">
-	<button class="btn btn-primary btn-petition-formtoggle " id="btn-petition-formToggle" type="button">SIGN THE PETITION</button>
+	<button class="btn btn-large btn-primary btn-petition-formtoggle " id="btn-petition-formToggle" type="button">SIGN THE PETITION</button>
 </div>
 </div>
 
@@ -254,7 +262,7 @@
 		</div>
 	</fieldset>
 	<div class="form-actions petition-formactions">
-		<button class="btn btn-large btn-primary btn-petition-submit" type="button">Sign it!</button>
+		<button class="btn btn-primary btn-petition-submit" type="button">Sign it!</button>
 	</div>
 	<div class="petition-formoutro">
 		<p>Sign form outro description cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus.</p>
@@ -262,10 +270,10 @@
 </form>
 </div>
 
-	<div class="section section-petition-accordion" id="section-petitionAccordion">
-    <div class="accordion-petition visible-phone" id="accordion-petition">
+	<div class="section section-petition-accordion visible-phone" id="section-petitionAccordion">
+    <div class="accordion-petition" id="accordion-petition">
         <section class="accordion-petition-item">
-            <h3 class="accordion-petition-header accordion-petition-letter-header">Letter</h3>
+            <h3 class="accordion-petition-header accordion-petition-letter-header">Letter<i class="z-state-close icon-chevron-up"></i><i class="z-state-open icon-chevron-down"></i></h3>
             <div class="accordion-petition-body accordion-petition-letter-body">
                 <div class="petition-letter">
 	<p>Nullam quis risus eget urna mollis ornare vel eu leo. Curabitur blandit tempus porttitor. Donec id elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
@@ -275,7 +283,7 @@
             </div>
         </section>
         <section class="accordion-petition-item">
-            <h3 class="accordion-petition-header accordion-petition-supporters-header">Supporters</h3>
+            <h3 class="accordion-petition-header accordion-petition-supporters-header">Supporters<i class="z-state-close icon-chevron-up"></i><i class="z-state-open icon-chevron-down"></i></h3>
             <div class="accordion-petition-body accordion-petition-supporters-body">
                 <ul class="petition-supporters-list">
 	<li class="supporter-item">
@@ -364,8 +372,8 @@
 	<div class="socialshare petition-socialshare">
 	<h5 class="share-title">Help Spread the Word:</h5>
 	<ul class="share-list">
-		<li class="share-item"><a href="#" class="share-link"><i class="icon-facebook"></i></a></li>
-		<li class="share-item"><a href="#" class="share-link"><i class="icon-twitter"></i></a></li>
+		<li class="share-item"><a href="#" class="share-link"><i class="share-icon icon-facebook"></i></a></li>
+		<li class="share-item"><a href="#" class="share-link"><i class="share-icon icon-twitter"></i></a></li>
 	</ul>
 </div>
 </div>
@@ -387,23 +395,17 @@
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	
-	<script src="../public/js/modernizr-latest.min.js"></script>
-
-	
-	<script src="../public/js/selectivizr.min.js"></script>
-	<script src="../public/js/respond/respond.src.min.js"></script>
-	<script src="../public/js/placeholders/placeholders.min.js"></script>
-	<script src="../public/js/media-match/media.match.min.js"></script>
-
 	<script src="../public/js/bootstrap.min.js"></script>
+	<script src="../public/js/easypiechart/dist/jquery.easypiechart.min.js"></script>
 	<script src="../public/js/zozo.accordion.4.0/js/zozo.accordion.min.js"></script>
-	<script src="../public/js/readmore/readmore.min.js"></script>
+	<script src="../public/js/readmore/readmore.min.js"></script>	
+	<script src="../public/js/media-match/media.match.min.js"></script>
 	<script src="../public/js/enquire/dist/enquire.min.js"></script>
  
 	<script type="text/javascript">
 		// $('#petitionSidebar').affix()
 
-		$(document).ready(function () {
+		$(window).ready(function () {
 
 			enquire.register("screen and (max-width: 767px)", {
 			    deferSetup : true,
@@ -427,18 +429,16 @@
 
 
 			// INIT: Petition Donut Chart
-
- 			// $('.petition-progchart').easyPieChart({
-		  //   	onStep: function(from, to, percent) {
-				// 	$(this.el).find('.percent').text(Math.round(percent));
-				// },
-				// barColor: "#555",
-				// trackColor: "#ccc",
-		  //       lineCap: "butt",
-		  //       lineWidth: 20,
-		  //       size: 140
-		  //   });
-
+ 			$('#petitionProgressChart').easyPieChart({
+		     	onStep: function(from, to, percent) {
+				 	$(this.el).find('.percent').text(Math.round(percent));
+				},
+				barColor: "#555",
+				trackColor: "#ccc",
+		        lineCap: "butt",
+		        lineWidth: 10,
+		        size: 100
+		    });
 
 			
 			// INIT: Petitition Accordion
@@ -451,7 +451,7 @@
                 expandMode: "multiple",
                 rounded: false,
                 headerSize: 48,
-                showIcons: true,
+                showIcons: false,
                 animation: {
         			type: "css"
     			}

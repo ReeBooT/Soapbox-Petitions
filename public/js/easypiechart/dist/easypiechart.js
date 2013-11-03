@@ -4,10 +4,20 @@
  *
  * @license Dual licensed under the MIT (http://www.opensource.org/licenses/mit-license.php) and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
  * @author Robert Fleischmann <rendro87@gmail.com> (http://robert-fleischmann.de)
- * @version 2.0.5
+ * @version 2.1.0
  **/
 
-(function() {
+(function(root, factory) {
+    if(typeof exports === 'object') {
+        module.exports = factory();
+    }
+    else if(typeof define === 'function' && define.amd) {
+        define('EasyPieChart', [], factory);
+    }
+    else {
+        root['EasyPieChart'] = factory();
+    }
+}(this, function() {
 /**
  * Renderer to render the chart on a canvas object
  * @param {DOMElement} el      DOM element to host the canvas (root of the plugin)
@@ -201,7 +211,7 @@ var EasyPieChart = function(el, opts) {
 		easing: function (x, t, b, c, d) { // more can be found here: http://gsgd.co.uk/sandbox/jquery/easing/
 			t = t / (d/2);
 			if (t < 1) {
-					return c / 2 * t * t + b;
+				return c / 2 * t * t + b;
 			}
 			return -c/2 * ((--t)*(t-2) - 1) + b;
 		},
@@ -260,7 +270,9 @@ var EasyPieChart = function(el, opts) {
 
 		// initial update
 		if (el.dataset && el.dataset.percent) {
-			this.update(parseInt(el.dataset.percent, 10));
+			this.update(parseFloat(el.dataset.percent));
+		} else if (el.getAttribute && el.getAttribute('data-percent')) {
+			this.update(parseFloat(el.getAttribute('data-percent')));
 		}
 	}.bind(this);
 
@@ -270,7 +282,7 @@ var EasyPieChart = function(el, opts) {
 	 * @return {object}          Instance of the plugin for method chaining
 	 */
 	this.update = function(newValue) {
-		newValue = parseInt(newValue, 10);
+		newValue = parseFloat(newValue);
 		if (options.animate) {
 			this.renderer.animate(currentValue, newValue);
 		} else {
@@ -283,4 +295,5 @@ var EasyPieChart = function(el, opts) {
 	init();
 };
 
-window.EasyPieChart = EasyPieChart;}());
+    return EasyPieChart;
+}));
