@@ -19,6 +19,7 @@ http://www.ryan-belisle.com/clients/picnet/soapbox/prototypes/soapbox-petitions/
 * Selectivizr
 * jQuery 1.9.1
 * Placeholders.js: http://jamesallardice.github.io/Placeholders.js/
+* jQuery ScrollTo: https://github.com/flesler/jquery.scrollTo
 
 ### IE 8/9 NOTES: ###
 
