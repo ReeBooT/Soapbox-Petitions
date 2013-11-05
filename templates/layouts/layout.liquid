@@ -50,6 +50,7 @@
 	{{ "/easypiechart/dist/jquery.easypiechart.min.js" | asset_url | script_tag }}
 	{{ "/zozo.accordion.4.0/js/zozo.accordion.min.js" | asset_url | script_tag }}
 	{{ "/readmore/readmore.min.js" | asset_url | script_tag }}	
+	{{ "/flesler-scrollto/jquery.scrollTo.min.js" | asset_url | script_tag }}	
 	{{ "/media-match/media.match.min.js" | asset_url | script_tag }}
 	{{ "/enquire/dist/enquire.min.js" | asset_url | script_tag }}
  
@@ -121,6 +122,9 @@
 	  			$("#petition-stickybar").addClass("is-hidden");
 	  			$("#section-petitionFormToggle").addClass("is-hidden");
 	  			$("#section-petitionForm").fadeIn( "fast", function() {});
+	  			// Scroll to Form
+	  			var target = '#section-petitionForm';
+				$.scrollTo( target, 800 );
 			});
 
 

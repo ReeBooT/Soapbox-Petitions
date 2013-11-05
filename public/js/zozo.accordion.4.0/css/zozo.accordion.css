@@ -1375,16 +1375,17 @@ Slider
 
 
 
-.wrapper {
+/*.wrapper {
     width: 1400px;
     margin: 0px auto;
-}
+}*/
 
-ol, ul {
+/*.z-accordion ol, 
+.z-accordion ul {
     list-style: none;
     margin: 0;
     padding: 0;
-}
+}*/
 
 
 /*slider*/

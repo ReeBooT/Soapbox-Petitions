@@ -118,6 +118,7 @@
 	<script src="../public/js/easypiechart/dist/jquery.easypiechart.min.js"></script>
 	<script src="../public/js/zozo.accordion.4.0/js/zozo.accordion.min.js"></script>
 	<script src="../public/js/readmore/readmore.min.js"></script>	
+	<script src="../public/js/flesler-scrollto/jquery.scrollTo.min.js"></script>	
 	<script src="../public/js/media-match/media.match.min.js"></script>
 	<script src="../public/js/enquire/dist/enquire.min.js"></script>
  
@@ -189,6 +190,9 @@
 	  			$("#petition-stickybar").addClass("is-hidden");
 	  			$("#section-petitionFormToggle").addClass("is-hidden");
 	  			$("#section-petitionForm").fadeIn( "fast", function() {});
+	  			// Scroll to Form
+	  			var target = '#section-petitionForm';
+				$.scrollTo( target, 800 );
 			});
 
 
